@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class Task {
+    
+    // MARK: - Properties
+    
+    var title = ""
+    var content = ""
+    var modificationTime = Date()
+}

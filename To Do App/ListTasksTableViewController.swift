@@ -9,6 +9,9 @@
 import UIKit
 
 class ListTasksTableViewController: UITableViewController {
+    
+    var tasks = [Task]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +36,8 @@ class ListTasksTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
+
+        return tasks.count
     }
 
  
@@ -43,6 +46,12 @@ class ListTasksTableViewController: UITableViewController {
         cell.taskTitleLabel.text = "task's title"
         cell.descriptionTitleLabel.text = "text's description"
         cell.taskModificationTimeLabel.text = "task's modification time"
+        // 2
+        let task = tasks[indexPath.row]
+        cell.taskTitleLabel.text = task.title
+        // 3
+        cell.taskModificationTimeLabel.text = "placeholder" //task.modificationTime.convertToString()
+        
         return cell
     }
   
